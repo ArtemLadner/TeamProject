@@ -35,7 +35,7 @@ let DB = data.finesData;
 buttonSubmit.addEventListener('click', payFine);
 
 function findFineByNumber(value) {
-  return DB.filter((item) => item.номер === value);
+  return DB.filter((item) => item.номер === '00' + value);
 }
 
 function checkPassport(value) {
@@ -78,4 +78,5 @@ function payFine() {
     alert("Не вірний cvv");
   }
   makePayment(fines[0]);
+  alert('Ваш штраф оплачено!')
 }
